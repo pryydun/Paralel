@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define TASK 7
+#define TASK 6
 
 // Завдання 1.2.1
 #if TASK == 1
@@ -273,7 +273,7 @@ int main() {
 
     while (!exchangePerson::IsReady(p1) ||
         !exchangePerson::IsReady(p2)) {
-        this_thread::yield();
+        Sleep(1);
     }
 
     thread t3(exchangePerson::Swap, ref(p1), ref(p2));
@@ -357,7 +357,7 @@ int main() {
 
     while (!exchangePerson::IsReady(p1) ||
         !exchangePerson::IsReady(p2)) {
-        this_thread::yield();
+        Sleep(1);
     }
 
     thread t3(exchangePerson::Swap, ref(p1), ref(p2));
@@ -366,4 +366,3 @@ int main() {
     return 0;
 }
 #endif
-
